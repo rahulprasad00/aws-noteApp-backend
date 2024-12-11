@@ -1,5 +1,8 @@
 version: 0.2
-
+env:
+  variables:
+    SERVERLESS_ACCESS_KEY: $SERVERLESS_ACCESS_KEY
+    
 phases: 
   install: 
     commands:
@@ -14,7 +17,7 @@ phases:
     commands:
       - echo Deployment Started on `date`
       - echo Deploying with the Serverless Framework
-      - sls deploy -s prod
+      - sls deploy -v -s $ENV_NAME
   post_build: 
     commands:
       - echo Deployment completed on `date`
