@@ -6,7 +6,6 @@ app: serverless-notes
 service: sls-notes-backend
 
 provider:
-  dashboard: false
   name: aws
   runtime: nodejs20.x
   region: eu-north-1
