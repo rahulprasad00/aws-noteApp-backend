@@ -14,7 +14,6 @@ phases:
     commands:
       - echo Deployment Started on `date`
       - echo Deploying with the Serverless Framework
-      - sls login
       - sls deploy -s prod
   post_build: 
     commands:
