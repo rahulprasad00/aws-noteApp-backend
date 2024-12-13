@@ -13,7 +13,7 @@ exports.handler = async (event)=>{
         let query= event.queryStringParameters;
         let limit = query && query.limit? parseInt(query.limit):5;
         let user_id= util.getUserId(event.headers);
-
+        console.log("User-id is",user_id);
         let params = {
             TableName: tableName,
             KeyConditionExpression: "user_id= :uid" ,
