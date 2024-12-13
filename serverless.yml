@@ -96,7 +96,7 @@ functions:
             headers: ${self:custom.allowedHeaders}
   delete-note:
     handler: api/delete-note.handler
-    description: DEKETE/note
+    description: DELETE/note
     events:
       - http:
           path: /note/t/{timestamp}
@@ -139,13 +139,13 @@ resources:
               ReadCapacityUnits: 1
               WriteCapacityUnits: 1
   
-  GatewayResponseDefault4XX:
-    Type: AWS::ApiGateway::GatewayResponse
-    Properties:
-      ResponseParameters:
-        gatewayresponse.header.Access-Control-Allow-Origin: '*'
-        gatewayresponse.header.Access-Control-Allow-Headers: '*'
-      ResponseType: DEFAULT_4XX
-      RestApiId: 
-        Ref: 'ApiGatewayRestApi'
+    GatewayResponseDefault4XX:
+      Type: AWS::ApiGateway::GatewayResponse
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: '*'
+          gatewayresponse.header.Access-Control-Allow-Headers: '*'
+        ResponseType: DEFAULT_4XX
+        RestApiId: 
+          Ref: 'ApiGatewayRestApi'
         
